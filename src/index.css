@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-logo: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-bg: #0A0C10;
+  --color-brand-beige: #12151C;
+  --color-brand-gold: #00BCE4; 
+  --color-brand-tertiary: #F04E98;
+  --color-brand-dark: #F8F9FA;
+  --color-brand-gray: #1b1e25;
+  --color-border-light: #242831;
+  --color-border-dark: #3a404c;
+  --color-text-muted: #8e95a3;
+  --color-text-subtle: #b1b7c2;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-brand-dark bg-brand-bg selection:bg-brand-gold selection:text-white font-sans;
+  }
+}

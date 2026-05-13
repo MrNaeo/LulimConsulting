@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { LulimLogo } from './Logo';
 
 export default function Footer() {
   return (
@@ -9,8 +10,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Info */}
           <div>
-            <Link to="/" className="font-logo font-bold text-2xl tracking-tighter flex items-center gap-2 mb-6 uppercase">
-              <span className="font-bold">Lulim<span className="text-brand-gold">.</span></span>
+            <Link to="/" className="flex items-center gap-2 mb-6">
+              <LulimLogo className="h-8 text-brand-dark" />
             </Link>
             <p className="text-text-subtle text-sm leading-relaxed mb-6 font-light">
               A full-service Business Strategy and Creative Agency. Aligning high-tier technical capabilities with premium market perception.
@@ -35,8 +36,7 @@ export default function Footer() {
               <li><Link to="/about" className="hover:text-brand-gold transition-colors">Our Story</Link></li>
               <li><Link to="/services" className="hover:text-brand-gold transition-colors">Expertise</Link></li>
               <li><Link to="/contact" className="hover:text-brand-gold transition-colors">Consultation</Link></li>
-              <li><a href="#" className="hover:text-brand-gold transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-brand-gold transition-colors">Insights</a></li>
+              <li><Link to="/insights" className="hover:text-brand-gold transition-colors">Insights</Link></li>
             </ul>
           </div>
 
@@ -72,10 +72,10 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border-light flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest font-bold text-text-muted">
-          <p>&copy; {new Date().getFullYear()} Lulim Executive. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Lulim Consulting. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-brand-gold">Privacy Policy</a>
-            <a href="#" className="hover:text-brand-gold">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-brand-gold">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-brand-gold">Terms of Service</Link>
           </div>
         </div>
       </div>

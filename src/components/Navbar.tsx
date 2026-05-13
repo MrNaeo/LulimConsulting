@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { LulimLogo } from './Logo';
 
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Services', path: '/services' },
   { name: 'About Us', path: '/about' },
+  { name: 'Insights', path: '/insights' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -45,9 +47,9 @@ export default function Navbar() {
     <nav className={navClasses}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className={`font-logo flex items-center gap-2 ${logoClasses}`}>
-          <span className="text-2xl font-bold tracking-tighter uppercase">LULIM<span className="text-brand-gold">.</span></span>
-          <span className={`hidden md:block text-[10px] uppercase tracking-[0.3em] font-semibold border-l ml-4 pl-4 ${isScrolled || !isHome ? 'text-text-muted border-border-light' : 'text-white/60 border-white/20'}`}>Executive</span>
+        <Link to="/" className={`flex items-center gap-2 ${logoClasses}`}>
+          <LulimLogo className="h-7 md:h-9" />
+          <span className={`hidden md:block text-[10px] uppercase tracking-[0.3em] font-semibold border-l ml-2 pl-4 ${isScrolled || !isHome ? 'text-text-muted border-border-light' : 'text-white/60 border-white/20'}`}>Consulting</span>
         </Link>
 
         {/* Desktop Nav */}

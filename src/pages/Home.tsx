@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-bg">
+      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-gray">
         {/* Abstract Background Elements */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-gold/15 blur-[120px] rounded-full z-10"></div>
@@ -32,7 +32,7 @@ export default function Home() {
           <img 
             src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=2000&q=80" 
             alt="Architectural shadows" 
-            className="w-full h-full object-cover opacity-40 filter grayscale contrast-125 z-0"
+            className="w-full h-full object-cover opacity-30 filter grayscale mix-blend-overlay z-0"
           />
         </div>
 
@@ -44,8 +44,8 @@ export default function Home() {
             className="max-w-3xl"
           >
             <motion.div variants={fadeInUp} className="inline-flex items-center gap-3 mb-6">
-              <span className="h-[1px] w-12 bg-brand-gold"></span>
-              <span className="text-brand-gold uppercase tracking-[0.2em] text-[10px] font-bold">Lulim Executive</span>
+              <span className="h-[1px] w-12 bg-brand-tertiary"></span>
+              <span className="text-brand-tertiary uppercase tracking-[0.2em] text-[10px] font-bold">Lulim Consulting</span>
             </motion.div>
             
             <motion.h1 
@@ -65,14 +65,14 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
               <Link 
                 to="/contact" 
-                className="px-10 py-5 bg-brand-gold text-brand-dark font-bold text-[11px] uppercase tracking-widest shadow-xl shadow-brand-gold/20 hover:scale-105 transition-transform flex items-center justify-center gap-2 group"
+                className="px-10 py-5 bg-brand-tertiary text-brand-dark font-bold text-[11px] uppercase tracking-widest shadow-xl shadow-brand-tertiary/20 hover:scale-105 transition-transform flex items-center justify-center gap-2 group"
               >
                 Book a Consultation
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
                 to="/services" 
-                className="px-10 py-5 border border-border-dark text-brand-dark font-bold text-[11px] uppercase tracking-widest hover:bg-brand-gray transition-colors flex items-center justify-center text-center"
+                className="px-10 py-5 border border-border-dark text-brand-dark font-bold text-[11px] uppercase tracking-widest bg-brand-bg/50 hover:bg-brand-bg transition-colors flex items-center justify-center text-center backdrop-blur-sm"
               >
                 Our Services
               </Link>
@@ -99,7 +99,7 @@ export default function Home() {
       </section>
 
       {/* Trusted By Section */}
-      <section className="py-20 bg-brand-gray border-y border-border-light relative overflow-hidden">
+      <section className="py-20 bg-brand-gray-light border-y border-border-light relative overflow-hidden">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-tertiary/5 blur-[100px] rounded-full z-0 pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
           <p className="text-[10px] font-bold text-text-muted tracking-[0.2em] uppercase mb-10">Institutional Trust & Global Standards</p>
@@ -207,19 +207,19 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-brand-bg p-10 lg:col-span-2 flex flex-col md:flex-row gap-8 items-center group cursor-pointer hover:bg-brand-gray transition-colors border-b border-border-light"
+              className="bg-brand-gray-light p-10 lg:col-span-2 flex flex-col md:flex-row gap-8 items-center group cursor-pointer hover:bg-brand-gray transition-colors border-b border-border-light"
             >
               <div className="flex-1">
                 <h3 className="text-2xl font-bold mb-4 font-heading text-brand-dark">Strategy & Communications</h3>
                 <p className="text-text-subtle mb-6 leading-relaxed font-light text-sm">
                   Insights-driven business strategy effectively diagnosing business problems against objectives. Effective media management and stakeholder relations through advanced Public Relations tactics.
                 </p>
-                <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-gold">
+                <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-tertiary">
                   Explore <ChevronRight size={14} />
                 </div>
               </div>
-              <div className="w-full md:w-1/3 aspect-video md:aspect-square bg-brand-beige overflow-hidden relative">
-                  <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" alt="Strategy" className="w-full h-full object-cover grayscale opacity-70 hover:opacity-100 hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+              <div className="w-full md:w-1/3 aspect-video md:aspect-square bg-brand-bg overflow-hidden relative border border-border-light">
+                  <img src="/lulim-consulting-beautiful-african-woman-monochrome-portrait.jpg" alt="Strategy" className="w-full h-full object-cover grayscale opacity-70 hover:opacity-100 hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
               </div>
             </motion.div>
 
@@ -230,13 +230,13 @@ export default function Home() {
                transition={{ duration: 0.6, delay: 0.1 }}
                className="bg-brand-bg p-10 group cursor-pointer border-r border-b md:border-b-0 border-border-light hover:bg-brand-gray transition-colors relative overflow-hidden"
             >
-              <BarChart3 className="text-brand-tertiary/10 w-48 h-48 absolute -right-10 -bottom-10 transform -rotate-12 group-hover:rotate-0 transition-transform duration-500" />
+              <BarChart3 className="text-brand-tertiary/5 w-48 h-48 absolute -right-10 -bottom-10 transform -rotate-12 group-hover:rotate-0 transition-transform duration-500" />
               <div className="relative z-10">
                 <h3 className="text-xl font-bold mb-4 font-heading text-brand-dark">Digital Marketing</h3>
                 <p className="text-text-subtle mb-6 text-sm leading-relaxed font-light">
                   Technical visibility for high-intent consumers. Suite includes SEO, Performance Marketing, Social Media branding, and UI/UX services.
                 </p>
-                <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-dark group-hover:text-brand-gold transition-colors">
+                <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-dark group-hover:text-brand-tertiary transition-colors">
                   Details <ChevronRight size={14} />
                 </div>
               </div>
@@ -249,7 +249,7 @@ export default function Home() {
                transition={{ duration: 0.6, delay: 0.2 }}
                className="bg-brand-bg p-10 group cursor-pointer hover:bg-brand-gray transition-colors relative overflow-hidden"
             >
-              <TrendingUp className="text-brand-gold/10 w-48 h-48 absolute -right-10 -bottom-10 transform -rotate-12 group-hover:rotate-0 transition-transform duration-500" />
+              <TrendingUp className="text-brand-gold/5 w-48 h-48 absolute -right-10 -bottom-10 transform -rotate-12 group-hover:rotate-0 transition-transform duration-500" />
               <div className="relative z-10">
                 <h3 className="text-xl font-bold mb-4 font-heading text-brand-dark">Creative Design</h3>
                 <p className="text-text-subtle mb-6 text-sm leading-relaxed font-light">

@@ -8,6 +8,48 @@ const fadeInUp = {
 };
 
 export default function Contact() {
+  const [formData, setFormData] = React.useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [status, setStatus] = React.useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@lulimconsulting.co.za", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: "New Message from Lulim Consulting Website"
+        })
+      });
+      
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 5000);
+      }
+    } catch (error) {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+    }
+  };
+
   return (
     <div className="w-full bg-brand-bg pt-24 pb-0">
       {/* Hero Section */}
@@ -55,28 +97,36 @@ export default function Contact() {
             <div className="bg-brand-bg p-8 md:p-12 border border-border-light relative">
               <div className="absolute top-0 left-0 w-full h-[1px] bg-brand-gold scale-x-50 origin-left"></div>
               <h2 className="text-2xl font-heading font-light text-brand-dark mb-8">Send us a message</h2>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2">Full Name</label>
-                      <input type="text" className="w-full px-4 py-3 bg-brand-bg border border-border-light focus:border-brand-gold outline-none transition-all rounded-none text-brand-dark" placeholder="John Doe" />
+                      <input type="text" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-3 bg-brand-bg border border-border-light focus:border-brand-gold outline-none transition-all rounded-none text-brand-dark" placeholder="John Doe" />
                   </div>
                   <div>
                     <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2">Email Address</label>
-                    <input type="email" className="w-full px-4 py-3 bg-brand-bg border border-border-light focus:border-brand-gold outline-none transition-all rounded-none text-brand-dark" placeholder="john@company.com" />
+                    <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3 bg-brand-bg border border-border-light focus:border-brand-gold outline-none transition-all rounded-none text-brand-dark" placeholder="john@company.com" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2">Phone Number</label>
-                  <input type="tel" className="w-full px-4 py-3 bg-brand-bg border border-border-light focus:border-brand-gold outline-none transition-all rounded-none text-brand-dark" placeholder="+27 00 000 0000" />
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 bg-brand-bg border border-border-light focus:border-brand-gold outline-none transition-all rounded-none text-brand-dark" placeholder="+27 00 000 0000" />
                 </div>
                 <div>
                   <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2">How can we help?</label>
-                  <textarea rows={5} className="w-full px-4 py-3 bg-brand-bg border border-border-light focus:border-brand-gold outline-none transition-all resize-none rounded-none text-brand-dark" placeholder="Tell us about your project or challenges..."></textarea>
+                  <textarea rows={5} name="message" required value={formData.message} onChange={handleChange} className="w-full px-4 py-3 bg-brand-bg border border-border-light focus:border-brand-gold outline-none transition-all resize-none rounded-none text-brand-dark" placeholder="Tell us about your project or challenges..."></textarea>
                 </div>
-                <button type="button" className="w-full py-5 bg-brand-dark text-brand-bg text-[11px] uppercase tracking-widest font-bold flex items-center justify-center gap-2 hover:bg-brand-gold hover:text-brand-dark transition-all relative overflow-hidden group">
-                  <span className="relative z-10 w-full flex items-center justify-center gap-2">Send Message <Send size={16} /></span>
+                <button type="submit" disabled={status === 'loading'} className="w-full py-5 bg-brand-dark text-brand-bg text-[11px] uppercase tracking-widest font-bold flex items-center justify-center gap-2 hover:bg-brand-gold hover:text-brand-dark transition-all relative overflow-hidden group disabled:opacity-70 disabled:cursor-not-allowed">
+                  <span className="relative z-10 w-full flex items-center justify-center gap-2">
+                    {status === 'loading' ? 'Sending...' : 'Send Message'} <Send size={16} />
+                  </span>
                 </button>
+                {status === 'success' && (
+                  <p className="text-green-500 text-sm mt-4 text-center">Message sent successfully! We'll be in touch soon.</p>
+                )}
+                {status === 'error' && (
+                  <p className="text-red-500 text-sm mt-4 text-center">Oops! Something went wrong, please try again.</p>
+                )}
               </form>
             </div>
           </motion.div>

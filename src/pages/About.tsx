@@ -14,19 +14,19 @@ export default function About() {
       name: "Thembeka Mabaso, CM(SA)",
       title: "Director",
       bio: "An award-winning Strategic Marketer and Chartered Marketer with over 16 years of experience. She holds a BCOM Honours in Marketing Management and is currently pursuing a Masters in Corporate Strategy through the Gordon Institute of Business Science.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+      image: "/Thembeka_Mabaso.png"
     },
     {
       name: "Nkateko Siweya",
       title: "Head of Digital",
       bio: "Over 20 years of experience in IT and Digital Marketing. Passionate about AI, Machine Learning, and technology, his unique skills deliver meaningful results.",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800"
+      image: "/Nkateko_Siweya.png"
     },
     {
       name: "Andrew Muleba",
       title: "Head of Design",
       bio: "Strategic Design Lead with over 14 years of experience for various tier-one businesses. He pursues work meticulously to ensure brands are not only distinctive but outperform competitors.",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800"
+      image: "/Andrew_Muleba.png"
     }
   ];
 
@@ -105,14 +105,14 @@ export default function About() {
             <div className="grid grid-cols-2 gap-4 relative">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-brand-gold/10 blur-xl"></div>
               <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=600" alt="Corporate" className="mt-8 border border-border-light grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-700 shadow-sm" />
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" alt="Strategy" className="border border-border-light grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-700 shadow-sm" />
+              <img src="public/lulim-consulting-avant-garde-furniture-design.jpg" alt="Strategy" className="border border-border-light grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-700 shadow-sm" />
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Essence / Values */}
-      <section className="py-24 bg-brand-bg relative border-y border-border-light">
+      <section className="py-24 bg-brand-gray relative border-y border-border-light">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
           <h2 className="text-[10px] uppercase tracking-[0.2em] font-bold text-text-muted mb-16">Our Essence</h2>
           
@@ -121,17 +121,17 @@ export default function About() {
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
               className="p-12 border-b md:border-b-0 border-border-light md:border-r relative group"
             >
-              <Globe className="w-8 h-8 text-brand-dark mx-auto mb-6 group-hover:text-brand-gold transition-colors" />
+              <Globe className="w-8 h-8 text-brand-dark mx-auto mb-6 group-hover:text-brand-tertiary transition-colors" />
               <h3 className="text-sm font-bold text-brand-dark uppercase tracking-wide mb-4">Vision</h3>
               <p className="text-text-subtle font-light text-[14px]">To be a leading and trusted Strategy and Creative partner to businesses in Africa.</p>
             </motion.div>
             
             <motion.div 
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-              className="p-12 border-b md:border-b-0 border-border-light md:border-r relative bg-brand-gray group"
+              className="p-12 border-b md:border-b-0 border-border-light md:border-r relative bg-brand-gray-light group"
             >
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-brand-gold"></div>
-              <Target className="w-8 h-8 text-brand-dark mx-auto mb-6 group-hover:text-brand-gold transition-colors" />
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-brand-tertiary"></div>
+              <Target className="w-8 h-8 text-brand-dark mx-auto mb-6 group-hover:text-brand-tertiary transition-colors" />
               <h3 className="text-sm font-bold text-brand-dark uppercase tracking-wide mb-4">Mission</h3>
               <p className="text-text-subtle font-light text-[14px]">To provide value that exceeds investment through impactful and measurable solutions.</p>
             </motion.div>
@@ -140,7 +140,7 @@ export default function About() {
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
               className="p-12 relative group"
             >
-              <Zap className="w-8 h-8 text-brand-dark mx-auto mb-6 group-hover:text-brand-gold transition-colors" />
+              <Zap className="w-8 h-8 text-brand-dark mx-auto mb-6 group-hover:text-brand-tertiary transition-colors" />
               <h3 className="text-sm font-bold text-brand-dark uppercase tracking-wide mb-4">Values</h3>
               <p className="text-text-subtle font-light text-[14px]">Innovation. Agility. Excellence.</p>
             </motion.div>
@@ -149,10 +149,10 @@ export default function About() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-24 max-w-7xl mx-auto px-6 md:px-12 border-b border-border-light">
+      <section className="py-24 max-w-7xl mx-auto px-6 md:px-12 bg-brand-bg">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-heading font-light text-brand-dark mb-6">Leadership Team</h2>
-          <div className="w-12 h-[1px] bg-brand-gold mx-auto"></div>
+          <div className="w-12 h-[2px] bg-brand-tertiary mx-auto"></div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -160,19 +160,19 @@ export default function About() {
             <motion.div 
               key={idx}
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-              className="group border border-border-light bg-brand-gray p-2"
+              className="group border border-border-light bg-brand-gray-light p-2"
             >
               <div className="overflow-hidden mb-6 relative aspect-[3/4] border border-border-light">
                 <img src={member.image} alt={member.name} className="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
                 <div className="absolute inset-0 bg-brand-dark/0 group-hover:bg-brand-dark/10 transition-colors z-10 flex items-end">
                   <div className="p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Link to="/contact" className="text-xs font-bold uppercase tracking-widest text-brand-dark bg-brand-beige px-4 py-2 hover:bg-brand-gold hover:text-brand-dark transition-colors">Connect</Link>
+                    <Link to="/contact" className="text-xs font-bold uppercase tracking-widest text-brand-dark bg-brand-beige px-4 py-2 hover:bg-brand-tertiary hover:text-brand-dark transition-colors">Connect</Link>
                   </div>
                 </div>
               </div>
               <div className="px-4 pb-6 border-b border-border-light">
                 <h3 className="text-sm font-bold uppercase tracking-wide text-brand-dark mb-1">{member.name}</h3>
-                <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-brand-gold mb-4">{member.title}</p>
+                <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-brand-tertiary mb-4">{member.title}</p>
                 <p className="text-text-subtle text-[13px] font-light leading-relaxed">{member.bio}</p>
               </div>
             </motion.div>
@@ -181,9 +181,10 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="bg-brand-bg py-24 text-center border-b border-border-light">
-        <h2 className="text-3xl font-heading font-light text-brand-dark mb-8">Partner with Industry Experts</h2>
-        <Link to="/contact" className="inline-flex px-10 py-5 bg-brand-gold text-brand-dark text-[11px] font-bold uppercase tracking-widest shadow-xl shadow-brand-gold/20 hover:scale-105 transition-transform">
+      <section className="bg-brand-gray-light py-24 text-center border-y border-border-light relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-tertiary/5 blur-[120px] rounded-full z-0"></div>
+        <h2 className="text-3xl font-heading font-light text-brand-dark mb-8 relative z-10">Partner with Industry Experts</h2>
+        <Link to="/contact" className="inline-flex px-10 py-5 bg-brand-tertiary text-brand-dark text-[11px] font-bold uppercase tracking-widest shadow-xl shadow-brand-tertiary/20 hover:scale-105 transition-transform relative z-10">
           Get in Touch
         </Link>
       </section>

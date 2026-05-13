@@ -14,7 +14,7 @@ export default function Services() {
       id: "strategy",
       title: "Strategy & Communications",
       desc: "Insights-driven business strategy effectively diagnosing business problems against objectives. We provide solutions that move the needle towards growth and scale, including effective media management and stakeholder relations through advanced Public Relations and communication tactics.",
-      icon: <Target className="w-10 h-10 text-brand-gold" />,
+      icon: <Target className="w-10 h-10 text-brand-tertiary" />,
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200"
     },
     {
@@ -28,7 +28,7 @@ export default function Services() {
       id: "digital",
       title: "Digital Marketing & UI/UX",
       desc: "Technical visibility for high-intent consumers. Our suite includes SEO, Performance Marketing, Social Media branding, Search Optimization, Website & App development, and professional UI & UX services.",
-      icon: <Layout className="w-10 h-10 text-brand-gold" />,
+      icon: <Layout className="w-10 h-10 text-brand-tertiary" />,
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200"
     },
     {
@@ -97,7 +97,7 @@ export default function Services() {
                 <p className="text-[15px] font-light text-text-subtle leading-relaxed mb-8">
                   {service.desc}
                 </p>
-                <Link to="/contact" className="inline-flex items-center text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark border-b border-brand-gold pb-1 hover:text-brand-gold transition-colors">
+                <Link to="/contact" className={`inline-flex items-center text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark border-b ${idx % 2 === 0 ? 'border-brand-tertiary hover:text-brand-tertiary' : 'border-brand-gold hover:text-brand-gold'} pb-1 transition-colors`}>
                   Learn More &rarr;
                 </Link>
               </div>
@@ -107,13 +107,14 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-brand-gray py-24 mb-[-40px] border-t border-border-light">
-        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
+      <section className="bg-brand-gray-light py-24 mb-[-40px] border-t border-border-light relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-brand-tertiary/5 blur-[100px] rounded-full z-0"></div>
+        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-heading font-light text-brand-dark mb-6">Need a tailored solution?</h2>
           <p className="text-text-subtle mb-10 text-md font-light max-w-xl mx-auto">
             Let's discuss how our integrated growth system can be applied to your specific business challenges.
           </p>
-          <Link to="/contact" className="inline-flex px-10 py-5 bg-brand-dark text-brand-bg hover:bg-brand-gold hover:text-brand-dark text-[11px] uppercase tracking-widest font-bold transition-all">
+          <Link to="/contact" className="inline-flex px-10 py-5 bg-brand-tertiary text-brand-dark hover:bg-brand-dark hover:text-brand-bg text-[11px] uppercase tracking-widest font-bold transition-all shadow-lg shadow-brand-tertiary/10">
             Schedule a Consultation
           </Link>
         </div>
